@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header.js';
 import Drawer from './components/Drawer/Drawer.js';
-import DevToolsWrapper from './components/DevTools/DevToolsWrapper.js';
+import AppBody from './components/AppBody/AppBody.js';
 
 class App extends Component {
   render() {
@@ -9,10 +9,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Drawer />
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <DevToolsWrapper /> 
+        <AppBody />
       </div>
     );
   }
