@@ -6,18 +6,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { styles } from './HeaderStyles.js';
+import { connect } from 'react-redux';
+import { toggleDrawer } from '../../thunks/componentThunks.js';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  flex: {
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+const mapDispatchToProps = {
+  toggleDrawer,
 };
 
 class Header extends Component {
@@ -25,6 +19,11 @@ class Header extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
+
+  handleMenuClick = () => {
+    const { toggleDrawer } = this.props;
+    toggleDrawer();
+  }
 
   render() {
     const { classes } = this.props;
@@ -35,6 +34,7 @@ class Header extends Component {
             <IconButton
               className={ classes.menuButton }
               color="inherit"
+              onClick={ this.handleMenuClick }
               aria-label="Menu"
             >
               <MenuIcon />
@@ -44,7 +44,7 @@ class Header extends Component {
               color="inherit"
               className={classes.flex}
             >
-              Title
+              Animals
             </Typography>
           </Toolbar>
         </AppBar>
@@ -53,4 +53,6 @@ class Header extends Component {
   }
 }
 
-export default withStyles(styles)(Header);
+const HeaderWithStyles = withStyles(styles)(Header); 
+
+export default connect(null, mapDispatchToProps)(HeaderWithStyles);
