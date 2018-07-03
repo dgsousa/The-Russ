@@ -1,5 +1,6 @@
 const initialState = {
   isOpen: false,
+  selection: 'birds',
 };
 
 const drawer = (state = initialState, action) => {
