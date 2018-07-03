@@ -28,8 +28,8 @@ class Header extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={ classes.root }>
-        <AppBar position="static">
+      <div>
+        <AppBar position='absolute'>
           <Toolbar>
             <IconButton
               className={ classes.menuButton }

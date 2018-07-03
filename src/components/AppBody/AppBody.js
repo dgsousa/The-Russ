@@ -1,12 +1,12 @@
 import React from 'react';
-import DevToolsWrapper from '../DevTools/DevToolsWrapper.js';
+import Drawer from '../Drawer/Drawer.js';
 import AnimalContainer from '../Animals/AnimalContainer.js';
 import './AppBody.css';
 
 const AppBody = () => (
   <div className='AppBody'>
     <AnimalContainer />
-    <DevToolsWrapper /> 
+    <Drawer />
   </div>
 );
 
