@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header.js';
 import Drawer from './components/Drawer/Drawer.js';
+import DevToolsWrapper from './components/DevTools/DevToolsWrapper.js';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <DevToolsWrapper /> 
       </div>
     );
   }
