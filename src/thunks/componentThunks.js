@@ -1,6 +1,7 @@
 import {
   openDrawer,
   closeDrawer,
+  changeDrawerSelection,
 } from '../actionCreators/componentActions.js';
 
 export const toggleDrawer = () => {
@@ -10,5 +11,11 @@ export const toggleDrawer = () => {
     } else {
       dispatch(openDrawer());
     }
+  }
+}
+
+export const drawerItemSelectedThunk = (selection) => {
+  return (dispatch) => {
+    dispatch(changeDrawerSelection({ selection }));
   }
 }

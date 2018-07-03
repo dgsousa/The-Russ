@@ -4,7 +4,7 @@ import AnimalList from './AnimalList.js';
 import { initBirdsThunk } from '../../thunks/animalThunks.js';
 
 const mapStateToProps = (state) => ({
-  selectedAnimal: state.selectedAnimal,
+  selectedAnimal: state.drawer.selection,
 });
 
 const mapDispatchToProps = {

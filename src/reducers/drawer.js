@@ -5,9 +5,20 @@ const initialState = {
 const drawer = (state = initialState, action) => {
   switch(action.type) {
     case 'OPEN_DRAWER':
-      return { isOpen: true };
+      return {
+        ...state,
+        isOpen: true,
+      };
     case 'CLOSE_DRAWER':
-      return { isOpen: false };
+      return {
+        ...state,
+        isOpen: false,
+      };
+    case 'CHANGE_DRAWER_SELECTION':
+      return {
+        ...state,
+        selection: action.selection,
+      }
     default:
       return state;
   }

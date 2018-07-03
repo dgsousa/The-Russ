@@ -9,7 +9,17 @@ const mapStateToProps = (state) => ({
 
 class AnimalList extends Component {
   render() {
-    const { birds } = this.props;
+    const {
+      birds,
+      selectedAnimal,
+    } = this.props;
+
+    if (selectedAnimal === 'fish') {
+      return (
+        <div>Fish coming soon!</div>
+      )
+    }
+
     return(
       <div className='AnimalList'>
         { birds.map((bird) => (
