@@ -1,10 +1,11 @@
 import React from 'react';
 import DevToolsWrapper from '../DevTools/DevToolsWrapper.js';
-import styles from './AppBody.css';
+import AnimalContainer from '../Animals/AnimalContainer.js';
+import './AppBody.css';
 
 const AppBody = () => (
-  <div className={ styles.AppBody }>
-    <div></div>
+  <div className='AppBody'>
+    <AnimalContainer />
     <DevToolsWrapper /> 
   </div>
 );

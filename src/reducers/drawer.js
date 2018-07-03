@@ -3,7 +3,6 @@ const initialState = {
 };
 
 const drawer = (state = initialState, action) => {
-  console.log('no reducer?', action.type);
   switch(action.type) {
     case 'OPEN_DRAWER':
       return { isOpen: true };

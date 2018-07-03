@@ -1,16 +1,17 @@
 import React from 'react';
+import Drawer from '@material-ui/core/Drawer';
 import DevTools from './DevTools.js';
-
-const wrapperStyles = {
-  height: '100%',
-  position: 'absolute',
-  right: '0px',
-}
+import './DevTools.css';
 
 const DevToolsWrapper = () => (
-  <div style={ wrapperStyles }>
-    <DevTools />
-  </div>
+  <Drawer
+    variant='permanent'
+    anchor='right'
+  >
+    <div className='DevTools'>
+      <DevTools />
+    </div>
+  </Drawer>
 );
 
 export default DevToolsWrapper;

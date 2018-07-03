@@ -5,7 +5,7 @@ const birdData = [
     color: 'brown',
     wingspan: '3.9 ft',
     weight: '3.3 lbs',
-    image: 'Peregrine_falcon_(Australia).JPG',
+    image: '/images/Peregrine_falcon_(Australia).JPG',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const birdData = [
     color: 'white',
     wingspan: '10 ft',
     weight: '30 lbs',
-    image: '178px-Trumpeter_Swan_Sasata.jpg',
+    image: '/images/178px-Trumpeter_Swan_Sasata.jpg',
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const birdData = [
     color: 'black/white',
     wingspan: '12 ft',
     weight: '16 lbs',
-    image: '149px-Short_tailed_Albatross1.jpg',
+    image: '/images/149px-Short_tailed_Albatross1.jpg',
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const birdData = [
     color: 'blue',
     wingspan: '2 in',
     weight: '.07 oz',
-    image: '145px-Trinidad_and_Tobago_hummingbirds_composite.jpg',
+    image: '/images/145px-Trinidad_and_Tobago_hummingbirds_composite.jpg',
   }
 ]
 

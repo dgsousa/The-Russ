@@ -1,0 +1,4 @@
+.AnimalList {
+  display: flex;
+  flex-direction: row;
+}

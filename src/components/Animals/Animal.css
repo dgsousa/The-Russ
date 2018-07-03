@@ -1,0 +1,9 @@
+.Card {
+  max-width: 345px;
+  margin: 1rem;
+}
+
+.Media {
+  height: 0;
+  padding-top: 56.25%;
+}
