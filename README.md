@@ -7,5 +7,3 @@ We will try and do two things:
 
 Here is a ticket for a bug currently affecting this app: 
 ![](BugTicket.png)
-
-If we finish with the bug, let's try and add fish.
