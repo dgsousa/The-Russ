@@ -1,58 +1,41 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './HeaderStyles.js';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toggleDrawer } from '../../thunks/componentThunks.js';
 
-const mapDispatchToProps = {
-  toggleDrawer,
-};
+const useStyles = makeStyles(styles);
 
-class Header extends Component {
+export default function() {
+  const dispatch = useDispatch();
+  const classes = useStyles();
 
-  static propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-
-  handleMenuClick = () => {
-    const { toggleDrawer } = this.props;
-    toggleDrawer();
-  }
-
-  render() {
-    const { classes } = this.props;
-    return (
-      <div>
-        <AppBar position='absolute'>
-          <Toolbar>
-            <IconButton
-              className={ classes.menuButton }
-              color="inherit"
-              onClick={ this.handleMenuClick }
-              aria-label="Menu"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.flex}
-            >
-              Animals
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <AppBar position='absolute'>
+        <Toolbar>
+          <IconButton
+            className={ classes.menuButton }
+            color="inherit"
+            onClick={ () => dispatch(toggleDrawer()) }
+            aria-label="Menu"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="title"
+            color="inherit"
+            className={classes.flex}
+          >
+            Animals
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-const HeaderWithStyles = withStyles(styles)(Header); 
-
-export default connect(null, mapDispatchToProps)(HeaderWithStyles);
