@@ -4,15 +4,13 @@ import AnimalList from './AnimalList.js';
 import { initBirdsThunk } from '../../thunks/animalThunks.js';
 
 export default function AnimalContainer() {
-
   const selectedAnimal = useSelector(state => state.drawer.selection);
   const dispatch = useDispatch();
-
   useEffect(() => dispatch(initBirdsThunk()), []);
 
   return (
-    <div>
-      <AnimalList selectedAnimal={ selectedAnimal } />
-    </div>
+    <AnimalList
+      selectedAnimal={ selectedAnimal }
+    />
   );
 }
