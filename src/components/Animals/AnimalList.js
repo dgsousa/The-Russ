@@ -12,7 +12,7 @@ export default function({ selectedAnimal }) {
     )
   }
 
-  return(
+  return (
     <div className='AnimalList'>
       { birds.map((bird) => (
         <Animal
@@ -25,5 +25,5 @@ export default function({ selectedAnimal }) {
         />
       ))}
     </div>
-  )
+  );
 }
