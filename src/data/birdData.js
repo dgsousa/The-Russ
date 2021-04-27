@@ -31,6 +31,6 @@ const birdData = [
     weight: '.07 oz',
     image: '/images/145px-Trinidad_and_Tobago_hummingbirds_composite.jpg',
   }
-]
+];
 
 export default birdData;

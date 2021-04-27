@@ -11,7 +11,7 @@ import { toggleDrawer } from '../../thunks/componentThunks.js';
 
 const useStyles = makeStyles(styles);
 
-export default function() {
+function Header() {
   const dispatch = useDispatch();
   const classes = useStyles();
 
@@ -39,3 +39,5 @@ export default function() {
     </div>
   );
 }
+
+export default Header;

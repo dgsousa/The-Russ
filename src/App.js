@@ -3,7 +3,7 @@ import Header from './components/Header/Header.js';
 import AppBody from './components/AppBody/AppBody.js';
 import DevToolsWrapper from './components/DevTools/DevToolsWrapper.js';
 
-export default function() {
+function App() {
   return (
     <div>
       <div className='App'>
@@ -16,3 +16,5 @@ export default function() {
     </div>
   );
 }
+
+export default App;

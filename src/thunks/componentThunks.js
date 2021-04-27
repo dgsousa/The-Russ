@@ -10,5 +10,6 @@ export const toggleDrawer = () => {
     } else {
       dispatch(openDrawer());
     }
-  }
-}
+  };
+};
+

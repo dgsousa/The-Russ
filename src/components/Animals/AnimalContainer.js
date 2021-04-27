@@ -6,7 +6,7 @@ import { initBirdsThunk } from '../../thunks/animalThunks.js';
 export default function AnimalContainer() {
   const selectedAnimal = useSelector(state => state.drawer.selection);
   const dispatch = useDispatch();
-  useEffect(() => dispatch(initBirdsThunk()), []);
+  useEffect(() => dispatch(initBirdsThunk()), [dispatch]);
 
   return (
     <AnimalList

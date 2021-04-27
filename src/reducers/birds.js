@@ -5,6 +5,6 @@ const birds = (state = [], action) => {
     default:
       return state;
   }
-}
+};
 
 export default birds;

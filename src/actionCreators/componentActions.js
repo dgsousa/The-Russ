@@ -1,8 +1,6 @@
-export const openDrawer = () => {
-  return {
-    type: 'OPEN_DRAWER',
-  }
-};
+export const openDrawer = () => ({
+  type: 'OPEN_DRAWER',
+});
 
 export const closeDrawer = () => ({
   type: 'CLOSE_DRAWER',
@@ -11,4 +9,4 @@ export const closeDrawer = () => ({
 export const changeDrawerSelection = ({ selection }) => ({
   type: 'CHANGE_DRAWER_SELECTION',
   selection,
-})
+});

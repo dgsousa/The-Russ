@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import Animal from './Animal.js';
 import './AnimalList.css';
 
-export default function({ selectedAnimal }) {
+function AnimalList({ selectedAnimal }) {
   const birds = useSelector(state => state.birds);
 
   if (selectedAnimal === 'fish') {
     return (
       <div>Fish coming soon!</div>
-    )
+    );
   }
 
   return (
@@ -27,3 +27,5 @@ export default function({ selectedAnimal }) {
     </div>
   );
 }
+
+export default AnimalList;

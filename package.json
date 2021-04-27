@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
     "@redux-devtools/core": "^3.9.0",
@@ -35,5 +36,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ]
+    }
   }
 }

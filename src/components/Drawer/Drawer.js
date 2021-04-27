@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import DrawerList from './DrawerList.js';
 import { toggleDrawer } from '../../thunks/componentThunks.js';
 
-export default function() {
+function DrawerComp() {
   const isOpen = useSelector(state => state.drawer.isOpen);
   const dispatch = useDispatch();
 
@@ -17,4 +17,6 @@ export default function() {
       <DrawerList />
     </Drawer>
   );
-};
+}
+
+export default DrawerComp;

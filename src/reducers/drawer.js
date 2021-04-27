@@ -19,10 +19,10 @@ const drawer = (state = initialState, action) => {
       return {
         ...state,
         selection: action.selection,
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 export default drawer;
