@@ -23,5 +23,5 @@ export const initBirdsThunk = () => {
   return async (dispatch) => {
     const birdData = await getBirdData();
     dispatch(initBirds({ birdData }));
-  }
-}
+  };
+};

@@ -31,6 +31,6 @@ const fishData = [
     weight: '3.5 lbs',
     image: '/images/Cheilopogon_melanurusPCCA20070623-3956B.jpg',
   }
-]
+];
 
 export default fishData;

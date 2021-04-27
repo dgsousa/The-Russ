@@ -5,6 +5,6 @@ const fish = (state = [], action) => {
     default:
       return state;
   }
-}
+};
 
 export default fish;

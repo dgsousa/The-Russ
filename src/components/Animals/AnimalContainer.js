@@ -1,31 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import AnimalList from './AnimalList.js';
 import { initBirdsThunk } from '../../thunks/animalThunks.js';
 
-const mapStateToProps = (state) => ({
-  selectedAnimal: state.drawer.selection,
-});
+export default function AnimalContainer() {
+  const selectedAnimal = useSelector(state => state.drawer.selection);
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(initBirdsThunk()), [dispatch]);
 
-const mapDispatchToProps = {
-  initBirdsThunk,
-};
-
-class AnimalContainer extends Component {
-
-  componentDidMount() {
-    const { initBirdsThunk } = this.props;
-    initBirdsThunk();
-  }
-
-  render() {
-    const { selectedAnimal } = this.props;
-    return (
-      <div>
-        <AnimalList selectedAnimal={ selectedAnimal } />
-      </div>
-    );
-  }
+  return (
+    <AnimalList
+      selectedAnimal={ selectedAnimal }
+    />
+  );
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(AnimalContainer);
