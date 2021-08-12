@@ -6,6 +6,7 @@ import DrawerList from './DrawerList.js';
 function DrawerComp({
   onClose,
   isOpen,
+  changeSelection,
 }) {
   return (
     <Drawer
@@ -13,7 +14,7 @@ function DrawerComp({
       onClose={ onClose }
       open={ isOpen }
     >
-      <DrawerList />
+      <DrawerList changeSelection={ changeSelection }/>
     </Drawer>
   );
 }

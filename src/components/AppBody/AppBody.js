@@ -22,7 +22,7 @@ class AppBody extends Component {
         <Drawer
           onClose={ onClose }
           isOpen={ isOpen }
-          onChange={ this.changeAnimalSelection }
+          changeSelection={ this.changeAnimalSelection }
         />
       </div>
     );
