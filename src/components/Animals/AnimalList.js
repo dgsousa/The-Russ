@@ -1,15 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Animal from './Animal.js';
 import './AnimalList.css';
 
-function mapStateToProps(state) {
-  return {
-    birds: state.birds
-  };
-}
-
-function AnimalList({ selectedAnimal, birds }) {
+function AnimalList({ selectedAnimal, animals }) {
   if (selectedAnimal === 'fish') {
     return (
       <div>Fish coming soon!</div>
@@ -18,7 +11,7 @@ function AnimalList({ selectedAnimal, birds }) {
 
   return (
     <div className='AnimalList'>
-      { birds.map((bird) => (
+      { animals.map((bird) => (
         <Animal
           key={ bird.id }
           name={ bird.name }
@@ -32,4 +25,4 @@ function AnimalList({ selectedAnimal, birds }) {
   );
 }
 
-export default connect(mapStateToProps)(AnimalList);
+export default AnimalList;

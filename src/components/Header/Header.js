@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,11 +6,12 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './HeaderStyles.js';
-import { toggleDrawer } from '../../thunks/componentThunks.js';
 
 const useStyles = makeStyles(styles);
 
-function Header({ dispatch }) {
+function Header({
+  onOpen
+}) {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,7 @@ function Header({ dispatch }) {
           <IconButton
             className={ classes.menuButton }
             color="inherit"
-            onClick={ () => dispatch(toggleDrawer()) }
+            onClick={ onOpen }
             aria-label="Menu"
           >
             <MenuIcon />
@@ -39,4 +39,4 @@ function Header({ dispatch }) {
   );
 }
 
-export default connect()(Header);
+export default Header;

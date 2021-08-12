@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import AnimalList from './AnimalList.js';
-import { initBirdsThunk } from '../../thunks/animalThunks.js';
-
-function mapStateToProps(state) {
-  return {
-    selectedAnimal: state.drawer.selection
-  };
-}
+import { fetchBirdData } from '../../requests/fetchData.js';
 
 class AnimalContainer extends Component {
+  state = {
+    birds: []
+  }
 
   componentDidMount() {
-    this.props.dispatch(initBirdsThunk());
+    this.fetchData();
   }
+
+  async fetchData() {
+    const birds = await fetchBirdData();
+    this.setState({ birds });
+  }
+
   render() {
     const { selectedAnimal } = this.props;
     return (
-      <AnimalList selectedAnimal={ selectedAnimal }/>
+      <AnimalList
+        animals={ this.state.birds }
+        selectedAnimal={ selectedAnimal }
+      />
     );
   }
-  
 }
 
-export default connect(
-  mapStateToProps
-)(AnimalContainer);
+export default AnimalContainer;

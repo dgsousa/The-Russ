@@ -1,23 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Drawer from '@material-ui/core/Drawer';
 import DrawerList from './DrawerList.js';
-import { toggleDrawer } from '../../thunks/componentThunks.js';
 
-function mapStateToProps(state) {
-  return {
-    isOpen: state.drawer.isOpen
-  };
-}
 
 function DrawerComp({
+  onClose,
   isOpen,
-  dispatch
 }) {
   return (
     <Drawer
       anchor='left'
-      onClose={ () => dispatch(toggleDrawer()) }
+      onClose={ onClose }
       open={ isOpen }
     >
       <DrawerList />
@@ -25,6 +18,4 @@ function DrawerComp({
   );
 }
 
-export default connect(
-  mapStateToProps
-)(DrawerComp);
+export default DrawerComp;
