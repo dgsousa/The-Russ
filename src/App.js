@@ -1,28 +1,23 @@
-import React, { Component } from 'react';
+import React, { useState, useCallback } from 'react';
 import Header from './components/Header/Header.js';
 import AppBody from './components/AppBody/AppBody.js';
 
-class App extends Component{
-  state = {
-    isOpen: false
-  };
+function App() {
+  const [isOpen, toggleDrawerState] = useState(false);
 
-  toggleDrawer = () => {
-    this.setState(() => ({
-      isOpen: !this.state.isOpen
-    }));
-  }
+  const toggleDrawer = useCallback(() => {
+    toggleDrawerState(!isOpen);
+  }, [isOpen]);
 
-  render() {
     return (
       <div>
         <div className='App'>
-          <Header onOpen={ this.toggleDrawer }/>
-          <AppBody onClose={ this.toggleDrawer } isOpen={ this.state.isOpen } />
+          <Header onOpen={ toggleDrawer }/>
+          <AppBody onClose={ toggleDrawer } isOpen={ isOpen } />
         </div>
       </div>
     );
-  }
+  
 }
 
 export default App;

@@ -1,32 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Drawer from '../Drawer/Drawer.js';
 import AnimalContainer from '../Animals/AnimalContainer.js';
 import './AppBody.css';
 
-class AppBody extends Component {
-  state = {
-    selectedAnimal: 'birds'
-  };
+function AppBody({ onClose, isOpen }) {
+  const [ selectedAnimal, changeAnimalSelection ] = useState('birds');
 
-  changeAnimalSelection = (selection) => {
-    this.setState({
-      selectedAnimal: selection
-    });
-  }
-
-  render() {
-    const { onClose, isOpen } = this.props;
-    return (
-      <div className='AppBody'>
-        <AnimalContainer selectedAnimal={ this.state.selectedAnimal } />
-        <Drawer
-          onClose={ onClose }
-          isOpen={ isOpen }
-          changeSelection={ this.changeAnimalSelection }
-        />
-      </div>
-    );
-  }
+  return (
+    <div className='AppBody'>
+      <AnimalContainer selectedAnimal={ selectedAnimal } />
+      <Drawer
+        onClose={ onClose }
+        isOpen={ isOpen }
+        changeSelection={ changeAnimalSelection }
+      />
+    </div>
+  );
 }
 
 export default AppBody;
