@@ -1,13 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Drawer from '@material-ui/core/Drawer';
-import { useDispatch, useSelector } from 'react-redux';
 import DrawerList from './DrawerList.js';
 import { toggleDrawer } from '../../thunks/componentThunks.js';
 
-function DrawerComp() {
-  const isOpen = useSelector(state => state.drawer.isOpen);
-  const dispatch = useDispatch();
+function mapStateToProps(state) {
+  return {
+    isOpen: state.drawer.isOpen
+  };
+}
 
+function DrawerComp({
+  isOpen,
+  dispatch
+}) {
   return (
     <Drawer
       anchor='left'
@@ -19,4 +25,6 @@ function DrawerComp() {
   );
 }
 
-export default DrawerComp;
+export default connect(
+  mapStateToProps
+)(DrawerComp);

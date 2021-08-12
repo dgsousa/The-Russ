@@ -1,11 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import Animal from './Animal.js';
 import './AnimalList.css';
 
-function AnimalList({ selectedAnimal }) {
-  const birds = useSelector(state => state.birds);
+function mapStateToProps(state) {
+  return {
+    birds: state.birds
+  };
+}
 
+function AnimalList({ selectedAnimal, birds }) {
   if (selectedAnimal === 'fish') {
     return (
       <div>Fish coming soon!</div>
@@ -28,4 +32,4 @@ function AnimalList({ selectedAnimal }) {
   );
 }
 
-export default AnimalList;
+export default connect(mapStateToProps)(AnimalList);
