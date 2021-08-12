@@ -8,7 +8,7 @@ class AppBody extends Component {
     selectedAnimal: 'birds'
   };
 
-  changeAnimalSelection(selection) {
+  changeAnimalSelection = (selection) => {
     this.setState({
       selectedAnimal: selection
     });
